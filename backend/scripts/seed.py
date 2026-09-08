@@ -82,12 +82,12 @@ async def seed() -> None:
         roles = {name: await _get_or_create_role(session, name, perms) for name, perms in _ROLES}
 
         admin_user = await _get_or_create_user(
-            session, "admin@nexus.local", "Nexus Administrator", roles["admin"], _DEFAULT_PASSWORD
+            session, "admin@nexus.io", "Nexus Administrator", roles["admin"], _DEFAULT_PASSWORD
         )
         manager_user = await _get_or_create_user(
-            session, "manager@nexus.local", "Asset Manager", roles["manager"], _DEFAULT_PASSWORD
+            session, "manager@nexus.io", "Asset Manager", roles["manager"], _DEFAULT_PASSWORD
         )
-        await _get_or_create_user(session, "viewer@nexus.local", "Read Only Viewer", roles["viewer"], _DEFAULT_PASSWORD)
+        await _get_or_create_user(session, "viewer@nexus.io", "Read Only Viewer", roles["viewer"], _DEFAULT_PASSWORD)
 
         categories = {name: await _get_or_create_category(session, name, type_) for name, type_ in _CATEGORIES}
 
@@ -152,9 +152,9 @@ async def seed() -> None:
         await session.commit()
 
         print("Seed data created/verified successfully.")
-        print(f"  Admin login:   admin@nexus.local / {_DEFAULT_PASSWORD}")
-        print(f"  Manager login: manager@nexus.local / {_DEFAULT_PASSWORD}")
-        print(f"  Viewer login:  viewer@nexus.local / {_DEFAULT_PASSWORD}")
+        print(f"  Admin login:   admin@nexus.io / {_DEFAULT_PASSWORD}")
+        print(f"  Manager login: manager@nexus.io / {_DEFAULT_PASSWORD}")
+        print(f"  Viewer login:  viewer@nexus.io / {_DEFAULT_PASSWORD}")
 
 
 if __name__ == "__main__":

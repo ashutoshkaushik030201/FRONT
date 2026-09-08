@@ -12,7 +12,7 @@ export function LoginPage() {
         <CardContent>
           <LoginForm />
           <p className="text-muted-foreground mt-6 text-center text-xs">
-            Seed accounts: admin@nexus.local · manager@nexus.local · viewer@nexus.local
+            Seed accounts: admin@nexus.io · manager@nexus.io · viewer@nexus.io
             <br />
             Password: ChangeMe123!
           </p>

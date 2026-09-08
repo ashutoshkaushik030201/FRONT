@@ -40,7 +40,7 @@ export function LoginForm() {
           id="email"
           type="email"
           autoComplete="username"
-          placeholder="admin@nexus.local"
+          placeholder="admin@nexus.io"
           aria-invalid={Boolean(errors.email)}
           {...register('email')}
         />

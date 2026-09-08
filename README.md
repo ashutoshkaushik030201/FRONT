@@ -30,9 +30,9 @@ seeds demo data (roles, users, categories, sample assets with assignment history
 
 | Role    | Email                 | Password       |
 |---------|------------------------|----------------|
-| Admin   | `admin@nexus.local`    | `ChangeMe123!` |
-| Manager | `manager@nexus.local`  | `ChangeMe123!` |
-| Viewer  | `viewer@nexus.local`   | `ChangeMe123!` |
+| Admin   | `admin@nexus.io`    | `ChangeMe123!` |
+| Manager | `manager@nexus.io`  | `ChangeMe123!` |
+| Viewer  | `viewer@nexus.io`   | `ChangeMe123!` |
 
 To stop everything: `docker compose down` (add `-v` to also drop the Postgres volume).
 

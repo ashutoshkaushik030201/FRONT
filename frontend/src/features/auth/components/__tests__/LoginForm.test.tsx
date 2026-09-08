@@ -5,7 +5,7 @@ import { describe, expect, it, vi } from 'vitest'
 
 import { LoginForm } from '@/features/auth/components/LoginForm'
 
-const mutateAsyncMock = vi.fn().mockResolvedValue({ id: '1', email: 'admin@nexus.local', role: 'admin' })
+const mutateAsyncMock = vi.fn().mockResolvedValue({ id: '1', email: 'admin@nexus.io', role: 'admin' })
 
 vi.mock('@/features/auth/api/useLogin', () => ({
   useLogin: () => ({ mutateAsync: mutateAsyncMock, isPending: false }),
@@ -35,12 +35,12 @@ describe('LoginForm', () => {
     const user = userEvent.setup()
     renderLoginForm()
 
-    await user.type(screen.getByLabelText(/email/i), 'admin@nexus.local')
+    await user.type(screen.getByLabelText(/email/i), 'admin@nexus.io')
     await user.type(screen.getByLabelText(/password/i), 'ChangeMe123!')
     await user.click(screen.getByRole('button', { name: /sign in/i }))
 
     expect(mutateAsyncMock).toHaveBeenCalledWith({
-      email: 'admin@nexus.local',
+      email: 'admin@nexus.io',
       password: 'ChangeMe123!',
     })
   })
